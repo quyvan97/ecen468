@@ -29,7 +29,7 @@ int sc_main (int argc, char* argv[]) {
 
 	// Dump the desired signals
 	sc_trace(wf, tInData, "strInData");
-    sc_trace(wf, tAddr, "strAddr");
+        sc_trace(wf, tAddr, "strAddr");
 	sc_trace(wf, tbCE, "strbCE");
 	sc_trace(wf, tbWE, "strbWE");
 	sc_trace(wf, tOutData, "strOutData");

@@ -1,0 +1,14 @@
+$(call v2_object_file_from_c_file,$$(PRJDIR)/lab1_code/RAM.cpp) : $(subst $(V2_SPACE),$(V2_ESC_SPACE),$(call v2_convert_to_unix,$(call v2_fix_for_win,$(PRJDIR)/lab1_code/RAM.cpp)))
+	$(v2_compile_sequence)
+-include $(call v2_dep_file_from_c_file,$$(PRJDIR)/lab1_code/RAM.cpp)
+
+$(call v2_exe_file_from_c_file,$$(PRJDIR)/lab1_code/RAM.cpp) : $(call v2_object_file_from_c_file,$$(PRJDIR)/lab1_code/RAM.cpp) $(v2_all_library_dependencies)
+	$(v2_link_sequence)
+
+$(call v2_object_file_from_c_file,$$(PRJDIR)/lab1_code/test_RAM.cpp) : $(subst $(V2_SPACE),$(V2_ESC_SPACE),$(call v2_convert_to_unix,$(call v2_fix_for_win,$(PRJDIR)/lab1_code/test_RAM.cpp)))
+	$(v2_compile_sequence)
+-include $(call v2_dep_file_from_c_file,$$(PRJDIR)/lab1_code/test_RAM.cpp)
+
+$(call v2_exe_file_from_c_file,$$(PRJDIR)/lab1_code/test_RAM.cpp) : $(call v2_object_file_from_c_file,$$(PRJDIR)/lab1_code/test_RAM.cpp) $(v2_all_library_dependencies)
+	$(v2_link_sequence)
+

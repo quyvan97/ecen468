@@ -1,0 +1,1 @@
+"/opt/coe/mentorgraphics/vista312/bin/vista_cc" -I. -c -x c++ -Wall  -Wall -Wno-unknown-pragmas -Wno-switch -Wno-unused -MMD -I.    "/home/ugrads/q/quyvan/ecen468/Lab1/lab1_code/RAM.cpp" -o "D_PRJDIR_/lab1_code/RAM.o" -H

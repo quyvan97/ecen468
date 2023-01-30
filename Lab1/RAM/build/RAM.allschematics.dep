@@ -1,0 +1,6 @@
+RAM.allschematics.o: RAM.allschematics.cpp \
+  $(VISTA_GENERIC_DIR)/include/vista_schematics/macros.h \
+  $(VISTA_GENERIC_DIR)/include/vista_schematics/../../CPP/vista_schematics/macros.h
+$(VISTA_GENERIC_DIR)/include/vista_schematics/../../CPP/vista_schematics/macros.h:
+$(VISTA_GENERIC_DIR)/include/vista_schematics/macros.h:
+RAM.allschematics.cpp:

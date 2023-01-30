@@ -1,0 +1,65 @@
+$date
+     Jan 24, 2023       17:10:25
+$end
+
+$version
+              SystemC 2.2.0 --- Sep 15 2011 00:24:25
+$end
+
+$timescale
+     1 ps
+$end
+
+$scope module SystemC $end
+$var wire    8  aaa  strInData [7:0]  $end
+$var wire   18  aab  strAddr [17:0]  $end
+$var wire    1  aac  strbCE       $end
+$var wire    1  aad  strbWE       $end
+$var wire    8  aae  strOutData [7:0]  $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+b0 aaa
+b0 aab
+1aac
+1aad
+b0 aae
+$end
+
+#5000
+b111101 aaa
+b111101 aab
+0aac
+0aad
+
+#10000
+b111110 aaa
+b111110 aab
+
+#15000
+b111111 aaa
+b111111 aab
+
+#20000
+b0 aaa
+1aac
+1aad
+
+#25000
+b111101 aab
+0aac
+b111101 aae
+
+#30000
+b111110 aab
+b111110 aae
+
+#35000
+b111111 aab
+b111111 aae
+

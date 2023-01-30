@@ -1,0 +1,34 @@
+### Custom WaveView ADV log file, revision O-2018.09 (build Aug 27, ) ###
+### created at 17:18:04 on Tue Jan 24 2023 (Linux AMD64) ###
+### Host Name: zach-127-01.engr.tamu.edu   User ID: quyvan   PID: 25429   ###
+wv_start_log
+# (0) running in waveview only mode
+# (0) SW_SX_PERL_LIB defined
+# (0) SW_SX_TCL_LIB defined
+# (0) HOME defined
+wv_move_window {Custom WaveView} {} -10 20
+wv_move_window {Custom WaveView} {} 68 40
+wv_resize_window {Custom WaveView} 800 400
+wv_select_window {Custom WaveView} 
+wv_move_window {Custom WaveView} {} 346 20
+wv_resize_window {Custom WaveView} 1492 737
+wv_select_window {Custom WaveView} 
+wv_press_tool_button {Custom WaveView} {} {RecentFile0} 
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:VCD_RAM.vcd(0)} {0} {+sep=@}
+wv_expand_tree_item {Custom WaveView} {} {hierview} {D0:VCD_RAM.vcd(0)} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:VCD_RAM.vcd(0)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:VCD_RAM.vcd(0)@SystemC(0)} {0} {+sep=@}
+wv_select_tree_item {Custom WaveView} {} {hierview} {D0:VCD_RAM.vcd(0)@SystemC(0)} {0} {+sep=@}
+wv_select_list_item {Custom WaveView} {} {sigview} {strAddr[17:0]} 0
+wv_select_list_item {Custom WaveView} {} {sigview} {strbWE} 4 +shift
+wv_select_list_item {Custom WaveView} {} {sigview} {strAddr[17:0]} 0
+wv_drag_list_item {Custom WaveView} {} {sigview} {strAddr[17:0]} 0
+wv_select_list_item {Custom WaveView} {} {sigview} {strbWE} 4 +shift
+wv_drag_list_item {Custom WaveView} {} {sigview} {strAddr[17:0]} 0
+wv_drag_enter WV1
+wv_drop_on WV1
+wv_close_window {Custom WaveView} 
+wv_move_window {Confirmation} {} 1010 350
+wv_select_dialog {Confirmation} 
+#wv_press_button {Confirmation} {} {Ok} 
+#*WARNING* Can not remove '/home/ugrads/q/quyvan/.cx_hostport/.cx_hostport_zach-127-01.engr.tamu.edu_25429'.
