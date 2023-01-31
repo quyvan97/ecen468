@@ -18,6 +18,7 @@ SC_MODULE (RAM) {
   sc_out <sc_uint <DATA_WIDTH> > OutData;
 
   // ----- Internal variables -----
+  // Declare 256K SRAM unit, each has 8 bits
   sc_uint<DATA_WIDTH> mem [RAM_DEPTH];
   
 
@@ -26,7 +27,8 @@ SC_MODULE (RAM) {
   // Write Operation : When we_b = 0, ce_b = 0
   void write_ram(){
     if (!bWE.read() && !bCE.read()) {
-      mem[Addr.read()] = InData.read(); 
+      // Assign InData into 1 address as in memory
+      mem[Addr.read()] = InData.read();
     }
   }
   
@@ -34,6 +36,7 @@ SC_MODULE (RAM) {
   // Read Operation : When we_b = 1, ce_b = 0
   void read_ram() {
     if (bWE.read() && !bCE.read()){
+      //Write data from 1 address of memory to OutData
       OutData.write(mem[Addr.read()]);
     }
   }

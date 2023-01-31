@@ -18,24 +18,20 @@ SC_MODULE (RAM) {
   sc_out <sc_uint <DATA_WIDTH> > OutData;
 
   // ----- Internal variables -----
-  // ...
   sc_uint<DATA_WIDTH> mem [RAM_DEPTH];
   
 
   // ----- Code Starts Here ----- 
   // Memory Write Block 
   // Write Operation : When we_b = 0, ce_b = 0
-  // ...
   void write_ram(){
     if (!bWE.read() && !bCE.read()) {
       mem[Addr.read()] = InData.read(); 
     }
   }
   
-
   // Memory Read Block 
   // Read Operation : When we_b = 1, ce_b = 0
-  // ...
   void read_ram() {
     if (bWE.read() && !bCE.read()){
       OutData.write(mem[Addr.read()]);
