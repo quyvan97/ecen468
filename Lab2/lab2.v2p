@@ -1,0 +1,34 @@
+ProjectName lab2
+Files {
+	 Sources {
+		{$PRJDIR/src/main.cpp}
+		{$PRJDIR/src/test.cpp}
+		{$PRJDIR/src/UART_XMTR.cpp}
+	 } 
+	 {Public Headers} {
+		{$PRJDIR/src/test.h}
+		{$PRJDIR/src/UART_XMTR.h}
+	 } 
+	 Models {} 
+	 Schematics {} 
+	 Documentation {} 
+	 {Linked Binaries} {} 
+	 {Other Binaries} {} 
+}
+Folders {
+	 Sources {*.c *.cpp *.C *.cxx *.cc} 
+	 {Public Headers} {*.h *.hpp *.H *.hxx *.hh} 
+	 Models *.mb 
+	 Schematics {} 
+	 Documentation {*.txt *.TXT *.doc *.DOC *.pdf *.PDF *.html *.HTML *.htm *.HTM *.ps *.PS} 
+	 {Linked Binaries} {*.o *.a *.so} 
+	 {Other Binaries} {*.exe *.x} 
+}
+GeneralCompilationOptions -Wall
+AlwaysCompileInCPPMode 1
+ProjectLibraryType archive
+ProjectComponentsLibraryPath {$PRJDIR/$PRJFILE_BASENAME/interfaces}
+ProjectWorkingDirectory {$PRJDIR/$PRJFILE_BASENAME/build}
+HasTLMSupport 0
+CompiledWithTLMSupport 0
+IsUsePathVariables 1

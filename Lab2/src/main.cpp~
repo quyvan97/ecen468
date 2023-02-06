@@ -1,0 +1,74 @@
+#include "UART_XMTR.h"
+#include "test.h"
+
+int sc_main (int argc, char* argv[]) {
+
+	// Input/Output Signal
+  	sc_signal < sc_uint<WORD_SIZE> > 	Data_Bus;
+  	sc_signal < bool > 			Load_XMT_datareg;
+  	sc_signal < bool > 			Byte_ready;
+  	sc_signal < bool > 			T_byte;
+  	sc_signal < bool > 			rst_b;
+  
+	sc_signal < bool >			Serial_out;
+	sc_signal < SIZE_BIT_COUNTER > IntState, NextIntState;
+
+	// Clock Generation
+	sc_clock clk("clk", 1, SC_NS);
+	
+	// Connect the DUT
+	// Method 1. Named Connection
+	// ...
+        
+	// >> Connect your top module here
+	// ...
+
+	// Method 2. Positional connection
+	// ...
+	// >> Connect your testbench here
+	// ...
+        UART_XMTR DUT("UART_XMR");
+        DUT.Load_XMT_datareg(Load_XMT_datareg);
+        DUT.Data_Bus(Data_Bus);
+        DUT.Byte_ready(Byte_ready);
+        DUT.T_byte(T_byte);
+        DUT.rst_b(rst_b);
+        DUT.Serial_out(Serial_out);
+        DUT.clk(clk);
+        DUT.IntState(IntState);
+		DUT.NextIntState(NextIntState);
+
+        test TST("TST");
+        TST.Load_XMT_datareg(Load_XMT_datareg);
+        TST.Data_Bus(Data_Bus);
+        TST.Byte_ready(Byte_ready);
+        TST.T_byte(T_byte);
+        TST.rst_b(rst_b);
+        TST.Serial_out(Serial_out);
+        TST.clk(clk);
+		TST.IntState(IntState);
+		TST.NextIntState(NextIntState);
+
+	// Open VCD file
+	sc_trace_file *wf = sc_create_vcd_trace_file("wave");
+
+	// Dump the desired signals
+	sc_trace(wf, Load_XMT_datareg, "Load_XMT_datareg");
+        sc_trace(wf, Byte_ready, "Byte_ready");
+	sc_trace(wf, T_byte, "T_byte");
+	sc_trace(wf, rst_b, "rst_b");
+	sc_trace(wf, Data_Bus, "Data_Bus");
+	sc_trace(wf, Serial_out, "Serial_out");
+	sc_trace(wf, IntState, "IntState");
+	sc_trace(wf, NextIntState, "NextIntState");
+	
+	// Time to simulate
+	// Simulate until it meets sc_stop() if sc_start(-1) or sc_start()
+	sc_start(1000, SC_NS);	// Simulate for 1000ns
+	//sc_start();
+
+	// Close the dump file
+	sc_close_vcd_trace_file(wf);
+	
+	return 0;	// Terminate simulation
+}

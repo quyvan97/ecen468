@@ -1,0 +1,6 @@
+UART.allschematics.o: UART.allschematics.cpp \
+  $(VISTA_GENERIC_DIR)/include/vista_schematics/macros.h \
+  $(VISTA_GENERIC_DIR)/include/vista_schematics/../../CPP/vista_schematics/macros.h
+$(VISTA_GENERIC_DIR)/include/vista_schematics/../../CPP/vista_schematics/macros.h:
+$(VISTA_GENERIC_DIR)/include/vista_schematics/macros.h:
+UART.allschematics.cpp:

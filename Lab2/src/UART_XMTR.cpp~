@@ -1,0 +1,74 @@
+//===========================================
+// Function : UART Transmitter
+//===========================================
+#include "UART_XMTR.h"
+
+  // ----- Code Starts Here ----- 
+
+  void UART_XMTR::Send_bit() {
+    
+    switch(IntState){
+      
+      case STATE_IDLE:
+        if(!rst_b){
+          NextIntState = STATE_IDLE;
+        }
+        else{
+          if(Load_XMT_datareg){
+            XMT_datareg = Data_Bus;
+            NextIntState = STATE_IDLE;
+          }
+          else{
+            if(Byte_ready){
+              // XMT_shftreg = (XMT_datareg.range(7,0),sc_uint<1>(1));
+              XMT_shftreg = (XMT_datareg.range(7,0),1'b0);
+              NextIntState = STATE_WAITING;
+            }
+            else {
+              NextIntState = STATE_IDLE;
+            }
+          }
+        }
+        break;
+    		
+      case STATE_WAITING:
+        if(T_byte){
+          XMT_shftreg[0] = 0;
+          NextIntState = STATE_SENDING;
+        }
+        else {
+          NextIntState = STATE_WAITING;
+        }
+        break;
+			
+			case STATE_SENDING:
+        if(bit_count < 9){
+          // XMT_shftreg = (sc_uint<1>(1), XMT_shftreg >> 1);
+          XMT_shftreg = (1'b0, XMT_shftreg.range(8,1));
+          NextIntState = STATE_SENDING;
+        }
+        else{
+          NextIntState = STATE_IDLE;
+        }
+        break;
+
+      default: 
+        NextIntState = STATE_IDLE;
+
+    }
+  
+		Serial_out.write(XMT_shftreg[0]);
+  
+  }
+
+  void UART_XMTR::Initialize() {
+		if(!rst_b.read()) {
+			IntState = STATE_IDLE;
+			
+			XMT_shftreg = 0x1ff;
+			bit_count = 0;
+		}
+		else {
+			IntState = NextIntState;
+		}
+  }

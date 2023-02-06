@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+// =============================================================================
+// This confidential and proprietary software may be used only as
+// authorised by a licensing agreement from ARM Limited
+//   (C) COPYRIGHT 2006,2007 ARM Limited
+//       ALL RIGHTS RESERVED
+// The entire notice above must be reproduced on all authorised
+// copies and copies may only be made to the extent permitted
+// by a licensing agreement from ARM Limited.
+//
+// =============================================================================
+//
+// Purpose :
+//           This defines the ARM High Speed Bus (AHB)
+//
+// =============================================================================
+-->
+<spirit:busDefinition xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
+   <spirit:vendor>amba.com</spirit:vendor>
+   <spirit:library>AMBA2</spirit:library>
+   <spirit:name>AHB</spirit:name>
+   <spirit:version>r2p0_6</spirit:version>
+   <spirit:directConnection>false</spirit:directConnection>
+   <spirit:isAddressable>true</spirit:isAddressable>
+   <spirit:extends spirit:library="AMBA3" spirit:name="AHBLite" spirit:vendor="amba.com" spirit:version="r1p0_6"/>
+   <spirit:systemGroupNames>
+      <spirit:systemGroupName>ahb_clk</spirit:systemGroupName>
+      <spirit:systemGroupName>ahb_reset</spirit:systemGroupName>
+   </spirit:systemGroupNames>
+</spirit:busDefinition>

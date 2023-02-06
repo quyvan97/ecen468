@@ -1,0 +1,3 @@
+include /opt/coe/mentorgraphics/vista312/generic/make/preMakefile
+
+include /opt/coe/mentorgraphics/vista312/generic/make/postMakefile

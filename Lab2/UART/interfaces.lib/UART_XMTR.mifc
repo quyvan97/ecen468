@@ -1,0 +1,12 @@
+# === Model Interface File ===
+# ============================
+
+class UART_XMTR
+include ../../src/UART_XMTR.h
+port -name Load_XMT_datareg -kind sc_in -class sc_in<bool> -signal_data_type bool
+port -name Byte_ready -kind sc_in -class sc_in<bool> -signal_data_type bool
+port -name T_byte -kind sc_in -class sc_in<bool> -signal_data_type bool
+port -name rst_b -kind sc_in -class sc_in<bool> -signal_data_type bool
+port -name Data_Bus -kind sc_in -class sc_in<sc_dt::sc_uint<8>> -signal_data_type {sc_dt::sc_uint<8> }
+port -name Serial_out -kind sc_out -class sc_out<bool> -signal_data_type bool
+port -name clk -kind sc_in -class sc_in<bool> -signal_data_type bool

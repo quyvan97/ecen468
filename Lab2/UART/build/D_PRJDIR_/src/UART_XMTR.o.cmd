@@ -1,0 +1,1 @@
+"/opt/coe/mentorgraphics/vista312/bin/vista_cc" -I. -c -x c++ -Wall  -Wall -Wno-unknown-pragmas -Wno-switch -Wno-unused -MMD -I.    "/home/ugrads/q/quyvan/ecen468/Lab2/src/UART_XMTR.cpp" -o "D_PRJDIR_/src/UART_XMTR.o" -H
