@@ -1,7 +1,0 @@
-### Custom WaveView session file (version O-2018.09 build Aug 27, ) ###
-### saved at 02:03:47 on Mon Feb  6 2023 ###
-wdf 0 "/home/ugrads/q/quyvan/ecen468/wave.vcd" load=used 
-scalar list
-waveview_begin 1  stack  offset=0 name_b=81 mntr_b=81 name_width=66 "name=waveview 1" 
-waveview_end
-browserOpened
